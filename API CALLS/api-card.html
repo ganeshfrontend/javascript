@@ -1,0 +1,113 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> 
+<style>
+#dd{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+#dd li{
+list-style:none;
+border:1px solid;
+width:200px;
+padding:10px;
+margin:10px;
+text-align: center;
+border-radius:20px;
+background-color: #ffe6ff
+;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#dd li img{
+    width:100%;
+    display:block;
+    border:1px solid;
+}
+</style>
+</head>
+<body>
+<button onclick="ganesh()">clickhere</button>
+Search:<input type="text" id="d" onkeyup="search()">
+<ul id="dd">
+
+</ul>
+<script>
+    var arr=[]
+
+function ganesh(){
+axios.get("https://restcountries.com/v3/all").then(function(response){
+    
+    arr=response.data
+    console.log(response.data)  
+  genUI(arr)
+})
+}
+
+
+function genUI(response){
+
+document.getElementById("dd").innerHTML=""
+
+arr.forEach(function(country){
+    var li1=document.createElement("li")
+    var h1=document.createElement("h3")
+    h1.innerHTML="Name:"+country.name.common
+li1.appendChild(h1)
+
+    var div1=document.createElement("div")
+    div1.innerHTML="population:"+country.population
+    div1.style.color="blue"
+    li1.appendChild(div1)
+
+   
+    var div2=document.createElement("div")
+     div2.innerHTML="capital:"+country.capital
+     li1.appendChild(div2)
+
+
+ var div3=document.createElement("div")
+ div3.innerHTML="area:"+country.area
+ li1.appendChild(div3)
+
+
+ var div4=document.createElement("div")
+div4.innerHTML="languages:"+country.languages.spa
+li1.appendChild(div4)
+
+
+var div5=document.createElement("div")
+div5.innerHTML="region:"+country.region
+li1.appendChild(div5)
+
+
+
+    var img1=document.createElement("img")
+    img1.src=country.flags[0]
+    li1.appendChild(img1)
+
+
+
+document.getElementById("dd").appendChild(li1)
+
+}) 
+
+console.log(response)
+
+}
+
+
+function search(){
+    var input=document.getElementById("d")
+    var y=input.value
+    var f=arr.filter(function(m,n){
+        return(m.name.common.startsWith(y))
+
+    })
+    genUI(f)
+}
+
+</script>
+</body>
+</html>

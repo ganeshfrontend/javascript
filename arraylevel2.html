@@ -1,0 +1,359 @@
+<html>
+<head>
+<body>
+<script>
+/* 1.print the minimum number in given array.
+var ar=[23,34,54,10,4,7];
+var min=Infinity;
+for(i=1;i<=ar.length-1;i++)
+{
+ if(min>ar[i])
+    {
+    min=ar[i]
+}
+}
+console.log(min);
+
+*/
+
+/*2.print the maximum number
+var ar=[23,34,54,10,4,7];
+var max=-Infinity;
+for(i=0;i<=ar.length-1;i++)
+{
+    if(max<ar[i])
+    {
+        max=ar[i];
+    }
+}
+console.log(max);
+*/
+
+/* 3.sum of all numbers in an array
+var ar=[23,34,54,10,4,7];
+var sum=0;
+for(i=0;i<=ar.length-1;i++)
+{
+    sum=ar[i]+sum;
+}
+console.log(sum)
+*/
+
+/* 4.average of all numbers in an array
+var ar=[23,34,54,10,4,7];
+var average;
+var sum=0;
+for(i=0;i<=ar.length-1;i++)
+{
+ sum=ar[i]+sum;
+ average=sum/ar.length;
+}
+console.log(average);
+*/
+
+/* 5.search the given number is there or not in an array
+var ar=[23,34,54,10,4,7];
+var s=+prompt();
+var g=false;
+for(i=0;i<=ar.length-1;i++)
+{
+   if(ar[i]===s)
+   {
+    g=true;
+   } 
+}
+console.log(g);
+
+*/
+
+/* 6.Given array: [23,34,54,10,34,7,23,10,34] print the total number of times an element found in the array. Given number: 23, Expected output: 2 Given number: 34, Expected output: 3 Given number: 10, Expected output: 2 Given number: 54, Expected output: 1
+var ar=[23,34,54,10,34,7,23,10,34];
+var number=+prompt();
+var count=0;
+for(i=0;i<=ar.length-1;i++)
+{
+    if(ar[i]==number)
+    {
+        count++;
+    }
+}
+console.log(count);
+
+*/
+
+/* 7.Given array:[23,34,54,10,4,7] print index of a given element in an Array. Given number: 23, Expected output: 0 Given number: 34, Expected output: 1 Given number: 10, Expected output: 3 Given number: 54, Expected output: 2
+var ar=[23,34,54,10,4,7];
+var number=+prompt();
+for(i=0;i<ar.length;i++)
+{
+if(ar[i]===number)
+{
+    console.log(i)
+}
+}
+
+*/
+/* 8.a program to store an array into another array var ar = [23,34,54,10,4,7] var br = [ ] Expected output: br = [23,34,54,10,4,7]
+var ar= [23,34,54,10,4,7];
+var br=[];
+//br[0]=23;
+//br[1]=34;
+//br[2]=54;
+//br[3]=10;
+//br[4]=4;
+//br[5]=7;
+for(var i=0;i<=ar.length-1;i++)
+{
+br[0]=23;
+br[1]=34;
+br[2]=54;
+br[3]=10;
+br[4]=4;
+br[5]=7;
+}        
+console.log(br);
+
+*/
+
+/*10.Store only even numbers of a given array in another array.
+var ar=[23,34,54,10,4,7];
+var br=[0];
+for(var i=0;i<=ar.length;i++)
+{
+    if(ar[i]%2===0)
+    {
+        br[0]=ar[i];
+    }
+console.log(br)
+}
+
+*/
+
+
+/*11.print only the perfect squares in an array
+var ar=[23,34,54,10,4,7];
+for(i=1;i<=ar.length-1;i++)
+{
+    for(j=1;j<=ar[j];j++)
+    {
+        if(ar[j]/i===i)
+       {
+           console.log(j)
+       }
+    }
+}
+*/
+
+// using forEach function
+
+/* 1.Given array: [23,34,54,10,4,7] print the minimum number in an Array. Expected output: 4
+var ar=[23,34,54,10,4,7];
+var min=Infinity;
+ar.forEach(function(x){
+if(min>x)
+{  
+    min=x; 
+}
+})
+console.log(min);
+
+*/
+
+/*2.Given array: [23,34,54,10,4,7] print the Maximum number in an array. Expected output: 54
+var ar=[23,34,54,10,4,7];
+var max=-Infinity;
+ar.forEach(function(x){
+    if(max<x)
+    {
+        max=x;
+    }
+})
+console.log(max)
+
+*/
+
+/* 3.Given array: [23,34,54,10,4,7] sum of all the numbers in an Array. Expected output: 132
+var ar=[23,34,54,10,4,7];
+var sum=0;
+ar.forEach(function(x){
+    sum=x+sum;
+})
+console.log(sum)
+
+*/
+
+/* 4.Given array: [23,34,54,10,4,7] Average of all the numbers in an Array. Expected output: 22
+var ar=[23,34,54,10,4,7];
+var average;
+var sum=0;
+ar.forEach(function(x){
+ sum=x+sum;
+ average=sum/ar.length;
+})
+console.log(average);
+
+*/
+
+/* 5.Given array: [23,34,54,10,4,7] search if the given number is there in an array or not. Given number: 34,Expected output: true Given number: 26, Expected output: false
+var ar=[23,34,54,10,4,7];
+var number=+prompt();
+var given=false;
+ar.forEach(function(x){
+    if(x===number)
+   {
+    given=true;
+   } 
+
+})
+console.log(given)
+
+*/
+
+/* 6.Given array: [23,34,54,10,34,7,23,10,34] print the total number of times an element found in the array. Given number: 23, Expected output: 2 Given number: 34, Expected output: 3 Given number: 10, Expected output: 2 Given number: 54, Expected output: 1
+var ar=[23,34,54,10,34,7,23,10,34];
+var number=+prompt();
+var count=0;
+ar.forEach(function(x){
+    if(x==number)
+    {
+        count++;
+    }
+})
+console.log(count);
+
+*/
+
+/* 7.Given array: [23,34,54,10,4,7] print index of a given element in an Array. Given number: 23, Expected output: 0 Given number: 34, Expected output: 1 Given number: 10, Expected output: 3 Given number: 54, Expected output: 2
+var ar=[23,34,54,10,4,7];
+var number=+prompt();
+ar.forEach(function(x,i){
+if(x==number)
+{
+    console.log(i)
+}
+})
+
+*/
+
+
+/* 8.a program to store an array into another array var ar = [23,34,54,10,4,7] var br = [ ]Expected output: br = [23,34,54,10,4,7]
+var ar=[23,34,54,10,4,7];
+var br=[];
+ar.forEach(function(){
+br[0]=23;
+br[1]=34;
+br[2]=54;
+br[3]=10;
+br[4]=4;
+br[5]=7;
+
+})
+
+*/
+
+/*9. Sort an array in ascending order. Given array: [23,34,54,10,4,7] Expected output: 4,7,10,23,34,54
+var ar=[23,34,54,10,4,7,555,4438];
+var result=ar.sort(function(a,b){
+if(a>b)
+{
+    return 1
+}
+else{
+    return -1
+}
+})
+console.log(result)
+
+*/
+
+/* 
+var ar=[3,5,7,10,34,55,85,200,4050,6488];
+ar.sort();
+console.log(ar);
+
+*/
+
+/*10.Store only even numbers of a given array in another array.
+var ar=[2,4,5757,435,5953,7382,475743,4488,9494];
+var result=ar.filter(function(x){
+    return (x%2==0);
+})
+console.log(result);
+
+*/
+//*******using filter method******
+/* 5.Given array: [23,34,54,10,4,7] search if the given number is there in an array or not. Given number: 34, Expected output: true Given number: 26, Expected output: false
+var ar= [1,2,3,4,2,6];
+var number=+prompt();
+var result=ar.filter(function(x){
+return (x==number)
+})
+if(result.length>0)
+{
+    console.log("true")
+}
+else{
+    console.log("false")
+}
+
+*/
+
+/* 6.Given array: [23,34,54,10,34,7,23,10,34] print the total number of times an element found in the array. Given number: 23, Expected output: 2 Given number: 34, Expected output: 3 Given number: 10, Expected output: 2 Given number: 54, Expected output: 1
+var ar=[23,34,54,10,34,7,23,10,34];
+var number=+prompt();
+var result=ar.filter(function(x){
+    return (x==n)
+})
+console.log(result.length)
+
+*/
+
+//********** using redue method************************
+
+/*1.Given array: [23,34,54,10,4,7] print the minimum number in an Array. Expected output: 4
+var ar=[23,34,54,10,4,7];
+var result=ar.reduce(function(a,b){
+    if(a<b)
+    {
+       return a; 
+    }
+    else{
+        return b;
+    }
+})
+console.log(result)
+
+*/
+
+/* 2.Given array: [23,34,54,10,4,7] print the Maximum number in an array. Expected output: 54
+var ar=[23,34,54,10,4,7];
+var result=ar.reduce(function(a,b){
+    if(a>b)
+    {
+        return a;
+    }
+    else{
+        return b;
+    }
+})
+console.log(result)
+
+*/
+
+/* 3.Given array: [23,34,54,10,4,7] sum of all the numbers in an Array. Expected output: 132
+var ar=[23,34,54,10,4,7];
+
+var result=ar.reduce(function(a,b){
+return (a+b);
+
+},0)
+console.log(result)
+
+*/
+
+// 6.
+
+</script>
+</body>
+ </head>
+</html>

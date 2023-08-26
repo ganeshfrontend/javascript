@@ -1,0 +1,81 @@
+<html>
+<head></head>
+<body>
+<script>
+var ar=[10,4,5,7];
+// 1.spread operator
+console.log(...ar)
+var br=[...ar]
+console.log(br)
+
+// 2.concat method
+var cr=[]
+var res=ar.concat(cr)
+console.log(res)
+
+// 3.Array.from method
+var res=Array.from(ar)
+console.log(res)
+
+// 4.array to string and final to string to array
+var res=JSON.stringify(ar)
+console.log(res)
+var res1=JSON.parse(JSON.stringify(ar))
+console.log(res1)
+
+// 5.slice method
+var res=ar.slice(0)
+console.log(res)
+
+// 6.forEach method
+var dr=[];
+ar.forEach(function(a){
+  dr.push(a)  
+})
+console.log(dr)
+
+// 7.reduce method
+var res=ar.reduce(function(a,b){
+    a.push(b)
+    return a
+},[])
+console.log(res)
+// 8.map method
+var res=ar.map(function(a){
+return a
+})
+console.log(res)
+
+// 9.filter method
+var res=ar.filter(function(a){
+    return true
+})
+console.log(res)
+
+
+
+
+// shallow copy and deep copy
+
+var ar=[3,5,7,9,["vamsi","tarun"],44];
+var br=ar;
+var cr=[...ar]
+var dr=JSON.parse(JSON.stringify(ar))
+ar[3]="ganesh"
+ar[4][1]="ganesh"
+console.log(ar)
+console.log(br)
+console.log(cr)
+console.log(dr)
+
+
+// enhanced object literals
+var a=100;
+var b="ganesh"
+var c=true;
+var obj={a,b,c,43939:"ganesh",[93949+1]:"lsds"}
+obj.lastname="dkssk"
+console.log(obj)
+</script>
+</body>
+</html>

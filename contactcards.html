@@ -1,0 +1,59 @@
+<html>
+<head>
+        
+</head>
+<body>
+<table align="center">
+<form  onsubmit="event.preventDefault()">
+<tr>
+<td><h1>Add Contact Cards</h1></td></tr>
+<tr>  
+<td>Name:</td>    
+<td><input type="text"  id="nm"></td></tr><br><br>
+<tr>
+<td>Number:</td>
+<td><input type="text" id="nb"></td></tr><br><br>
+<tr>
+<td>Email:</td>
+<td><input type="text"  id="em"></td></tr><br><br>
+<tr>
+<td>Enter Image Url:</td>
+<td><input type="text" id="im"></td></tr><br><br>
+<tr>
+<td><button onclick="add()">Add Student</button></td>
+<td><ul id="unor">
+
+</ul></td></tr>
+<td><div id="dd"></div></td>
+</form>
+</table>
+</body>
+<script>
+
+var ar=[];
+var unorder=document.getElementById("unor")
+function add(){
+var name=document.getElementById("nm")
+var number=document.getElementById("nb")
+var email=document.getElementById("em")
+var image=document.getElementById("im")
+var div=document.getElementById("dd")
+ar.push(name.value)
+ar.push(number.value)
+ar.push(email.value)
+ar.push(image.value)
+ganesh();
+}
+function ganesh(){
+unorder.innerHTML="",
+ar.forEach(function(s,i){
+var newli = document.createElement("li")
+newli.innerHTML=s;
+unorder.appendChild(newli)
+
+
+
+    })
+}
+</script>
+</html>

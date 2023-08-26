@@ -1,0 +1,119 @@
+<html>
+<head>
+<body>
+<table  border="2px" cellpadding="20px">
+<tr>
+    <th onclick="nn()">Firstname</th>
+    <th onclick="aa()">Age</th>
+  </tr>
+<tbody id="tt">
+
+</tbody>
+</table>
+    
+<script>
+
+var students=[
+    {
+        firstname:"ganesh",
+        age:25
+    },
+    {
+        firstname:"venkatesh",
+        age:28
+    },
+    {
+        firstname:"tarun",
+        age:23
+    },
+
+]
+
+/* without Iteration
+var tr1 = document.createElement("tr");
+var td1 = document.createElement("td");
+td1.innerHTML=students[0].firstname;
+tr1.appendChild(td1);
+var table = document.getElementById("tt");
+var td2 = document.createElement("td");
+td2.innerHTML=students[0].age;
+tr1.appendChild(td2);
+table.appendChild(tr1);
+
+
+
+var tr2 = document.createElement("tr");
+var td3 = document.createElement("td");
+td3.innerHTML=students[1].firstname;
+tr2.appendChild(td3);
+table.appendChild(tr2);
+var td4 = document.createElement("td");
+td4.innerHTML=students[1].age;
+tr2.appendChild(td4);
+
+var tr3 = document.createElement("tr");
+var td5 = document.createElement("td");
+td5.innerHTML=students[2].firstname;
+tr3.appendChild(td5);
+table.appendChild(tr3);
+var td6 = document.createElement("td");
+td6.innerHTML=students[2].age;
+tr3.appendChild(td6);
+
+
+*/
+
+// with Iteration
+var table = document.getElementById("tt");
+gentable()
+function gentable(){
+tt.innerHTML=""
+students.forEach(function(s,i){
+var trow = document.createElement("tr");
+var fntd =  document.createElement("td");
+fntd.innerHTML=s.firstname;
+var agetd = document.createElement("td");
+agetd.innerHTML=s.age;
+trow.appendChild(fntd);
+trow.appendChild(agetd);
+table.appendChild(trow);
+
+})
+
+}
+
+
+function aa(){
+  students.sort(function(a,b){
+if(a.age<b.age)
+{
+  return -1
+}
+if(a.age>b.age)
+{
+  return 1
+}
+return 0
+  })
+  gentable()
+}
+
+function nn(){
+  students.sort(function(a,b){
+    if(a.firstname<b.firstname)
+    {
+      return -1
+    }
+    if(a.firstname>b.firstname)
+    {
+      return 1
+    }
+    return 0
+  })
+  gentable()
+}
+</script>
+
+</body>
+ </head>
+</html>

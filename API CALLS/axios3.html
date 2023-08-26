@@ -1,0 +1,54 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<button onclick="show()">showdata</button>
+<body>
+<table border="2px">
+    <th>Title</th>
+    <th>Url</th>
+    <th>ThumbnailUrl</th>
+    <th>Id</th>
+
+    <tbody id="tb">
+
+    </tbody>
+</table>
+<script>
+var x=document.getElementById("tb")
+var ar=[]
+function show(){
+axios.get("https://jsonplaceholder.typicode.com/photos").
+then(function(result){
+    console.log(result)
+var ar=result.data
+ar.forEach(function(photos){
+
+    var tr1=document.createElement("tr")
+    var td1=document.createElement("td")
+    td1.innerHTML=photos.title
+    tr1.appendChild(td1)
+
+var td2=document.createElement("td")
+td2.innerHTML=photos.url
+tr1.appendChild(td2)
+
+var td3=document.createElement("td")
+td3.innerHTML=photos.thumbnailUrl
+tr1.appendChild(td3)
+
+var td4=document.createElement("td")
+td4.innerHTML=photos.id
+tr1.appendChild(td4)
+
+
+
+x.appendChild(tr1)
+})
+
+})
+}
+
+</script>  
+</body>
+</head>
+</html>

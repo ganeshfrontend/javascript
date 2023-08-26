@@ -1,0 +1,189 @@
+<html>
+<head>
+<body>
+<!-- <table border="1px" id="tt" cellpadding="20px">
+ <tr>   
+<th>Person</th>
+<th>Age</th>
+</tr>
+</table><br><br> -->
+ <!-- <input type="text" id="t1"> 
+  <ul id="t2">
+    
+</ul>
+ <button onClick="ganesh()">submit</button>
+ /*
+ var res=document.getElementById("t1"); 
+ var res1=document.getElementById("t2");
+ var result=[];
+ 
+ function ganesh(){
+  t2.innerHTML="";
+ result.push(res.value);
+     
+ result.forEach(function(s,i){
+ 
+  var li=document.createElement("li");
+ li.innerHTML=s;
+  t2.appendChild(li);
+         
+     })
+  }
+  */
+  -->
+  <table border="1px">
+    <thead>
+        <th onClick="sort_of_name()">firstame</th>
+        <th onClick="sort_of_age()">age</th>
+    </thead>
+    <tbody id="tb"></tbody>
+</table>
+<button onClick="gentable()">genrate</button>
+
+  <script>
+ /* 
+  var students=[
+  {
+     firstname:"ganesh",
+     age:25
+
+  },
+  {
+    firstname:"venkatesh",
+    age:40
+  },
+  {
+    firstname:"rajesh",
+    age:24
+  }
+
+];
+ var table=  document.getElementById("tt");
+students.forEach(function(s,i){
+     var tr1=document.createElement("tr");
+     var td1=document.createElement("td");
+     td1.innerHTML=s.firstname;
+    tr1.appendChild(td1);
+   
+
+     var td2=document.createElement("td");
+      td2.innerHTML=s.age;
+     tr1.appendChild(td2);
+    table.appendChild(tr1);
+ });
+
+*/
+
+var students=[
+  {
+    firstname:"ganesh",
+    age:25
+  },
+  {
+    firstname:"venkatesh",
+    age:27
+  },
+  {
+    firstname:"vinay",
+    age:22
+  }
+];
+/*
+var table=  document.getElementById("tt");
+students.forEach(function(s,i){
+     var tr1=document.createElement("tr");
+     var td1=document.createElement("td");
+     td1.innerHTML=s.firstname;
+    tr1.appendChild(td1);
+   
+
+     var td2=document.createElement("td");
+      td2.innerHTML=s.age;
+     tr1.appendChild(td2);
+    table.appendChild(tr1);
+ });
+
+function sortofage(){
+  students.sort(function(a,b){
+    if(a>b){
+      return 1;
+    }
+    if(a<b){
+
+      return -1;
+    }
+    return 0;
+  })
+  console.log(students)
+}
+function sortofname(){
+students.sort(function(a,b){
+    if(a.firstname>b.firstname){
+        return 1
+        
+    }
+   if(a.firstname<b.firstname) 
+    return -1
+})
+console.log(students)
+}
+*/
+
+var tb=document.getElementById("tb")
+            gentable(students)
+            
+
+           function gentable(abb){
+
+            tb.innerHTML="";
+            abb.forEach(function(s,i){
+             var table_row=document.createElement("tr")
+
+             var ntd= document.createElement("td");
+             ntd.innerHTML=s.firstname;
+             table_row.appendChild(ntd)
+             var mtd=document.createElement("td")
+             mtd.innerHTML=s.age;
+             table_row.appendChild(mtd);
+             tb.appendChild(table_row);
+        })
+
+        }
+function sort_of_age(){
+students.sort(function(a,b){
+                if(a.age>b.age){
+                    return 1
+                    
+                }
+                if(a.age<b.age){
+                return -1
+                }
+                return 0
+            
+            })
+            gentable(students)
+        
+            } 
+
+            function sort_of_name(){
+
+students.sort(function(a,b){
+     if(a.firstname>b.firstname){
+         return 1
+         
+     }
+     if(a.firstname<b.firstname){
+     return -1
+     }
+     return 0
+ 
+ })
+ gentable(students)
+
+ } 
+ 
+
+</script>
+</body>
+</head>
+</html>

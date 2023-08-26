@@ -1,0 +1,47 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<button onclick="show()">showdata</button>
+<body>
+<table border="2px">
+    <th>Title</th>
+    <th>Body</th>
+    <th>Id</th>
+
+<tbody id="tb">
+
+</tbody>
+</table>
+<script>
+var x=document.getElementById("tb")
+var ar=[]
+function show(){
+axios.get("https://jsonplaceholder.typicode.com/posts").
+then(function(result){
+    console.log(result)
+var ar=result.data
+ar.forEach(function(posts){
+
+    var tr1=document.createElement("tr")
+    var td1=document.createElement("td")
+    td1.innerHTML=posts.title
+    tr1.appendChild(td1)
+
+var td2=document.createElement("td")
+td2.innerHTML=posts.body
+tr1.appendChild(td2)
+
+
+var td3=document.createElement("td")
+td3.innerHTML=posts.id
+tr1.appendChild(td3)
+
+x.appendChild(tr1)
+})
+
+})
+}
+</script>  
+</body>
+</head>
+</html>

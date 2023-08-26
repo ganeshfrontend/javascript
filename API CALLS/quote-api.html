@@ -1,0 +1,76 @@
+<html>
+<head>
+<style>
+  #d {
+    display: flex;
+    justify-content:flex-start;
+
+  }
+  #d li{
+    border:1px solid;
+    list-style:none;
+    padding:20px;
+    margin:20px;
+    width:200px;
+    display:block;
+   background-color:antiquewhite;
+  }
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<button onclick="sub()">submit</button><br><br>
+<body>
+
+<ul id="d">
+
+</ul>
+
+<script>
+
+function sub(){
+document.getElementById("d").innerHTML="";
+ var str1="https://api.quotable.io"
+ var str2="random"
+ axios.get(`${str1}/${str2}`)
+ .then(function(response){
+console.log(response)
+ console.log(response.data)
+
+var random=response.data
+
+var li1=document.createElement("li")
+li1.innerHTML="Author:"+random.author
+
+var p2=document.createElement("p")
+p2.innerHTML="Content:"+random.content
+li1.appendChild(p2)
+
+
+var p3=document.createElement("p")
+p3.innerHTML="DateAdded:"+random.dateAdded
+li1.appendChild(p3)
+
+
+
+var p4=document.createElement("p")
+p4.innerHTML="Tags:"+random.tags
+li1.appendChild(p4)
+
+var p5=document.createElement("p")
+p5.innerHTML="Length:"+random.length
+li1.appendChild(p5)
+
+
+document.getElementById("d").appendChild(li1)
+
+
+
+    }).catch(function(error){console.log(error)})
+}
+
+
+</script>
+</body> 
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+<style>
+
+
+#d li{
+    list-style:none;
+    border:1px solid;
+    width:200px;
+    padding:10px;
+    background-color:violet;
+    
+}
+</style>
+</head>
+<body>
+<button onclick="ganesh()">clickhere</button>
+
+<ul id="d">
+
+</ul>
+
+<script>
+    
+
+function ganesh(){
+
+
+axios.get("https://api.dictionaryapi.dev/api/v2/entries/en/sarcastic")
+.then(function(response){
+ console.log(response.data)
+dictionary=response.data
+
+ dictionary.forEach(function(data){
+  
+ var li1=document.createElement("li")
+li1.innerHTML="word:"+data.word 
+
+var div1=document.createElement("div")
+ div1.innerHTML="partofspeech:"+data.meanings[0].partOfSpeech
+ li1.appendChild(div1)
+
+ var div2=document.createElement("div")
+div2.innerHTML="definiton:"+data.meanings[0].definitions[0].definition
+li1.appendChild(div2)
+
+var div3=document.createElement("div")
+div3.innerHTML="synonyms:"+data.meanings[0].synonyms[0]
+li1.appendChild(div3)
+
+
+var div4=document.createElement("div")
+div4.innerHTML="text:"+data.phonetics[0].text
+li1.appendChild(div4)
+
+
+var div5=document.createElement("div")
+div5.innerHTML="audio:"+data.phonetics[0].audio
+li1.appendChild(div5)
+
+    document.getElementById("d").appendChild(li1)
+        
+})
+
+    }).catch(function(error){console.log(error)})
+
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<html>
+<head></head>
+<body>
+      <!--
+   <table  border="2px">
+        <thead>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>city</th>
+</thead>
+<tbody id="vv">
+
+</tbody>
+   </table>
+     
+<button  onclick="add()">Add Text</button>
+<div id="cc" style="border:1px solid;width:200px;height:100px;"></div><br><br>
+<button onclick="red()">red</button>
+<button onclick="green()">green</button>
+<button onclick="pur()">purple</button>
+<button onclick="ora()">orange</button>-->
+<script>   
+// 1. Given an h1 element:
+/*a.Print the text inside the h1 element in the console.
+<h1 id="ab">hello world</h1>
+
+        var x = document.getElementById("ab")
+        console.log(x.innerHTML)
+
+
+*/
+/*b.
+<h1 id="ab">hello world</h1>
+var x = document.getElementById("ab")
+
+console.log(typeof (x))
+*/
+/* c.Print the text inside the h1 in uppercase in the console.
+<h1 id="ab">hello world</h1>
+var x = document.getElementById("ab")
+
+console.log(x.innerHTML.toUpperCase())
+*/
+/* d.Change the text of the h1 to "Welcome to Edupoly".
+
+<h1 id="ab">hello world</h1>
+var x = document.getElementById("ab")
+
+x.innerHTML = "welocome to edupoly" 
+        console.log(x.innerHTML)
+*/
+/* 2.Print the texts inside the h1 and h2 elements in the console.
+
+
+<h1 class="a">hello</h1>
+var x=document.getElementByClassName("a")
+for(i=0;i<=x.length-1;i++){
+
+    console.log(x[i].innerHTML);
+}
+
+*/
+
+/*3.
+var ar=[ ];
+var x=document.getElementsByTagName("li")
+for(i=0;i<=x.length-1;i++){
+ar.push(x[i].innerHTML);
+}
+console.log(ar)
+*/
+/*4.Print the text inside the first paragraph element in the console.
+var x=document.getElementsByTagName("p")
+console.log(x[0].innerHTML);
+*/
+
+// 5.Generate HTML Elements using document object
+/*1. Create one h1 element and put some text into it.
+var x = document.createElement("h1");
+console.log(x);
+x.innerHTML="hello ganesh world";
+*/
+/*2. Create one h1 element,put some text into it and apply red font color to it.
+var x= document.createElement("h1");
+console.log(x);
+x.innerHTML="Hello Ganesh World";
+x.style.color="red";
+document.body.appendChild(x);
+*/
+
+/*3. Take an array of names and create a list from it.
+var ar=["ganesh","venkatesh","maruthi","vinay"];
+var x=document.createElement("ul");
+ar.forEach(function(s,i){
+var y=document.createElement("li");
+y.innerHTML=s;
+x.appendChild(y);
+})
+document.body.appendChild(x);
+
+*/
+
+/*4.Take an array of numbers and create a list from it.
+var ar=[12,3,4,77,44,66,33,99];
+var x = document.createElement("ul");
+ar.forEach(function(s,i){
+    var y = document.createElement("li") ;
+    y.innerHTML=s;
+    x.appendChild(y);
+})
+document.body.appendChild(x)
+*/
+
+/* 5. Take an array of objects and create a table form it.
+var employees=[
+        {
+        firstname:"praveen",
+        age:36,
+        gender:"male",
+        salary:10000,
+        city:"hyd"
+},
+{
+        firstname:"srikanth",
+        age:32,
+        gender:"male",
+        salary:20000,
+        city:"bengalore"
+},
+{
+        firstname:"praveen",
+        age:36,
+        gender:"male",
+        salary:10000,
+        city:"hyd"
+},
+{
+        firstname:"pradeep",
+        age:21,
+        gender:"male",
+        salary:25000,
+        city:"hyd"
+},
+{
+        firstname:"mounica",
+        age:20,
+        gender:"female",
+        salary:30000,
+        city:"nalgonda"
+},
+{
+        firstname:"nikhil",
+        age:22,
+        gender:"male",
+        salary:2000,
+        city:"guntur"
+},
+{
+        firstname:"riya",
+        age:14,
+        gender:"female",
+        salary:40000,
+        city:"indore"
+},
+
+];
+
+employees.forEach(function(e,i){
+var trow=document.createElement("tr");
+var fntd=document.createElement("td");
+fntd.innerHTML=e.firstname;
+trow.appendChild(fntd);
+var agetd=document.createElement("td");
+agetd.innerHTML=e.age;
+trow.appendChild(agetd);      
+var gentd=document.createElement("td");
+gentd.innerHTML=e.gender;
+trow.appendChild(gentd);      
+var sartd=document.createElement("td");
+sartd.innerHTML=e.sartd;
+trow.appendChild(sartd);      
+var citytd=document.createElement("td");
+citytd.innerHTML=e.city;
+trow.appendChild(citytd);      
+
+var table=document.getElementById("vv");
+table.appendChild(trow);
+})
+*/
+
+/* 6.Take an array of image urls and display the images in browser.
+var ar=[
+        "https://cf-cdn.cityinfoservices.com/public/uploads/projectBanner/large/Cyber%20Towers%20-%20Hyd__1935946647.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/d/d5/Long_Exposure_of_Cable_bridge_on_Durgam_Cheruvu.jpg",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/98/f7/df/charminar.jpg?w=700&h=500&s=1"
+]
+ar.forEach(function(s,i){
+        var x=document.createElement("img")
+
+        x.src=s;
+        x.style.width="200px";
+        x.style.height="200px";
+        document.body.appendChild(x)
+})
+*/
+
+
+/* 6.Generate List Elements using document object for the given Array of Objects
+
+var students = [
+{
+ name:'jaya',
+gender:'female',
+place:'gachibowli',
+},
+{
+ name:'dasu',
+gender:'male',
+place:'kphb'
+ },
+ {
+ name:'swati',
+ gender:'female',
+place:'pune'
+ },
+{
+name:'pallavi',
+gender:'female',
+place:'assam'
+ },
+{
+name:'kiran',
+gender:'male',
+place:'kondapur'
+},
+{
+name:'thirumala',
+gender:'male',
+place:'madhapur'
+},
+{
+name:'priya',
+gender:'female',
+place:'hitech'
+},
+]
+       
+var x=document.createElement("ul");
+students.forEach(function(s,i){
+var y=document.createElement("li");
+y.innerHTML=s.name;
+x.appendChild(y);
+
+var z=document.createElement("ul");
+var zx=document.createElement("li");
+zx.innerHTML=s.gender;
+z.appendChild(zx);
+
+var ax=document.createElement("li");
+ax.innerHTML=s.place;
+z.appendChild(ax);
+
+if(s.gender=="female"){
+    y.style.backgroundColor="orange";           
+}
+else{
+        y.style.backgroundColor="purple";           
+}
+y.appendChild(z)
+});
+document.body.appendChild(x);
+x.style.border="10px solid green";
+
+*/
+     
+
+/* 7.Display the above data like the following image using Javascript DOM Element creation and append
+var students = [		
+{
+    "firstname": "praveen",
+    "age": 36,
+    "subjects":['angular','nodejs','reactjs','java']
+}, 
+{
+    "firstname": "srikanth",
+    "age": 32,
+    "subjects":['react','mongodb']
+}, 
+{
+    "firstname": "pradeep",
+    "age": 21,
+    "subjects":['express','mongoose','python']
+}
+]
+
+*/
+
+
+// 10.assignments on events
+/* 1.
+function add(){
+var x=document.createElement("span");
+x.innerHTML="welcome to ganesh";
+ document.body.appendChild(x);
+}
+*/
+/* 2.
+function red(){
+var x=document.getElementById("cc");
+x.style.backgroundColor="red";
+}
+function green(){
+var x=document.getElementById("cc");
+x.style.backgroundColor="green";
+}
+function pur(){
+var x=document.getElementById("cc");
+x.style.backgroundColor="purple";
+}
+function ora(){
+var x=document.getElementById("cc");
+x.style.backgroundColor="orange";
+}
+*/
+
+
+</script>
+</body>
+</html>

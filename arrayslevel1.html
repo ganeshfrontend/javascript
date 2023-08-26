@@ -1,0 +1,408 @@
+<html> 
+<head>
+<body>
+            
+<script>
+/* 1.given array=[23,34,54,0,4,7]print array values using for loop
+var ar=[23,34,54,0,4,7];
+for(i=0;i<=ar.length-1;i++)
+{
+    console.log(ar[i]);
+}
+
+*/
+
+/*2.given array=[23,34,54,0,4,7]print all elements except first element
+var ar=[23,34,54,0,4,7] ;
+for(i=1;i<=ar.length-1;i++)
+{
+    console.log(ar[i])
+}
+*/
+
+/*3.given array=[23,34,54,0,4,7] print all elements except last element
+var ar=[23,34,54,0,4,7];
+for(i=0;i<=ar.length-2;i++)
+{
+    console.log(ar[i])
+}
+*/
+
+/*4.print all numbers from last to first index.given array=[23,34,54,0,4,7]
+var ar=[23,34,54,0,4,7];
+for(i=ar.length-1;i>=0;i--)
+{
+    console.log(ar[i])
+}
+
+*/
+
+/*5.print all numbers from last to first index except last element
+var ar=[23,34,54,0,4,7];
+for(i=ar.length-1;i>=1;i--)
+{
+    console.log(ar[i])
+}
+*/
+
+/* 6.print only last 4 elements
+var ar=[23,34,54,0,4,7];
+for(i=ar.length-4;i<=ar.length-1;i++)
+{
+    console.log(ar[i]);
+}
+
+*/
+
+/* 7.print all values greater than given number ,given number is 20
+var ar=[23,34,54,10,4,7];
+for(i=0;i<=ar.length-1;i++)
+{
+    if(ar[i]>20)
+    {
+        console.log(ar[i])
+    }
+}
+
+*/
+
+/*8.print all even numbers
+var ar=[23,34,54,10,4,7];
+for(i=0;i<=ar.length-1;i++)
+{
+    if(ar[i]%2===0)
+    {
+        console.log(ar[i])
+    }
+}
+*/
+
+/* 9.print all odd numbers
+var ar=[23,34,54,10,4,7];
+for(i=0;i<=ar.length-1;i++)
+{
+    if(ar[i]%2===1)
+    {
+        console.log(ar[i])
+    }
+}
+
+*/
+
+/* 10.print all positive numbers in array .
+var ar=[23,-34,-54,10,-4,7];
+for(i=0;i<=ar.length-1;i++)
+{
+    if(ar[i]>0)
+    {
+        console.log(ar[i])
+    }
+}
+
+*/
+
+/* 11.print only 2 digit number
+var ar=[23,34,54,10,4,7];
+for(i=0;i<=ar.length-1;i++)
+{
+    if(ar[i]>9 && ar[i]<=99)
+    {
+        console.log(ar[i])
+    }
+}
+
+*/
+
+/*13.print only multiples of 2 and 3
+var ar=[23,34,54,10,4,7];
+for(var i=0;i<=ar.length-1;i++)
+{
+    if(ar[i]%2===0 && ar[i]%3===0)
+    {
+        console.log(ar[i])
+    }
+}
+
+*/
+
+
+/*14.print only multiples of 3 or 5
+var ar=[23,34,54,10,4,7];
+for(var i=0;i<=ar.length-1;i++)
+{
+    if(ar[i]%3===0 || ar[i]%5===0)
+    {
+        console.log(ar[i])
+
+    }
+}
+
+*/
+
+/*************using forEach function********************
+ 
+
+/* 1.Given array: [23,34,54,0,4,7] print all the Array values using a for loop. Expected output: 23 34 54 0 4 7
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x){
+    console.log(x)
+})
+
+*/
+/* 2.print all numbers in an array except the first element. Expected output: 34 54 0 4 7
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x,i){
+    if(i!==0)
+    {
+        console.log(x)
+    }
+})
+
+*/
+
+/* 3.Print all elements in an array except the last element Expected output: 23 34 54 0 4
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x,i){
+ if(i!=ar.length-1)
+ {
+    console.log(x)
+ }
+})
+
+*/
+
+/* 4.Print all the numbers from last index to first index Expected output: 7 4 0 54 34 23
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x,i){
+  if()
+})
+  */
+ 
+/*7.Print only the last 4 elements of an array. Expected output: 54 0 4 7
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x,i){
+    if(i>=ar.length-4)
+    {
+        console.log(x)
+    }
+})
+
+*/
+
+/*8.Given array: [23,34,54,10,4,7] print values that are greater than the given number.Given number:20, Expected output: 23,34,54
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x,i){
+    if(x>20)
+    {
+        console.log(x)
+    }
+})
+
+*/
+
+/* 9.Given array: [23,34,54,10,4,7] print all the even numbers in an Array. Expected output: 34,54,10,4
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x){
+    if(x%2==0)
+    {
+        console.log(x)
+    }
+})
+
+*/
+
+/* 10.Given array: [23,34,54,10,4,7] print all the odd numbers in an Array. Expected output: 23,7
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x){
+    if(x%2==1)
+    {
+        console.log(x)
+    }
+})
+
+*/
+
+/*11.Given array: [23,-34,-54,10,-4,7] print all the positive numbers in an array. Expected output: 23,10,7
+var ar=[23,-34,-54,10,-4,7];
+ar.forEach(function(x){
+    if(x>0)
+    {
+      console.log(x)  
+    }
+})
+*/
+
+/* 12.Print only the 2 digit numbers from an array
+var ar=[23,34,54,0,4,7];
+ar.forEach(function(x){
+    if(x>9 && x<99)
+    {
+        console.log(x)
+    }
+})
+*/
+
+/* 13.Print only multiples of 5 from an array
+var ar=[22,40,54,87,90];
+ar.forEach(function(x){
+    if(x%5==0)
+    {
+        console.log(x)
+    }
+})
+
+*/
+
+/*14.Print only multiples of 2 AND 3 from an array
+var ar=[22,40,54,87,90];
+ar.forEach(function(x){
+    if(x%2==0 && x%3==0)
+    {
+     console.log(x)   
+    }
+})
+
+*/
+
+/* 15.Print only multiples of 3 OR 5 from an array
+var ar=[22,40,54,87,90];
+ar.forEach(function(x){
+    if(x%3==0 || x%5==0)
+    {
+        console.log(x)
+    }
+})
+
+*/
+
+
+//********* using filter method*******///
+/* new syntax.
+var result=ar.filter(function(){
+    return
+})
+console.log(result)
+*/
+/*var ar=[1,2,3,4];
+var result=ar.filter(function(x){
+    return (a%2==0);
+})
+console.log(result)
+
+*/
+
+/* 2.print all numbers in an array except the first element. Expected output: 34 54 0 4 7
+var ar=[23,34,54,0,4,7];
+var result=ar.filter(function(x,i){
+    return (i!==0);
+})
+console.log(result)
+*/
+
+
+/*  3.Print all elements in an array except the last element Expected output: 23 34 54 0 4
+var ar=[23,34,54,0,4,7];
+var result=ar.filter(function(x,i){
+  return (i!=ar.length-1)
+})
+console.log(result)
+
+*/
+
+/*7.Print only the last 4 elements of an array. Expected output: 54 0 4 7
+var ar=[23,34,54,0,4,7];
+var result=ar.filter(function(x,i){
+    return (i>=ar.length-4)
+})
+console.log(result)
+
+*/
+
+/*8.Given array: [23,34,54,10,4,7] print values that are greater than the given number.Given number:20, Expected output: 23,34,54
+var ar=[23,34,54,0,4,7];
+var result=ar.filter(function(x){
+    return (x>20)
+})
+console.log(result)
+
+*/
+
+/*9.Given array: [23,34,54,10,4,7] print all the even numbers in an Array. Expected output: 34,54,10,4
+var ar=[23,34,54,0,4,7];
+var result=ar.filter(function(x){
+    return (x%2==0)
+})
+console.log(result)
+
+*/
+/*10.Given array: [23,34,54,10,4,7] print all the odd numbers in an Array. Expected output: 23,7
+var ar=[23,34,54,0,4,7];
+var result=ar.filter(function(x){
+    return (x%2==1)
+})
+console.log(result)
+
+*/
+
+/*11.Given array: [23,-34,-54,10,-4,7] print all the positive numbers in an array. Expected output: 23,10,7
+var ar=[23,-34,-54,10,-4,7];
+var result=ar.filter(function(x){
+    return (x>0)
+})
+console.log(result)
+
+*/
+
+/* 12.Print only the 2 digit numbers from an array
+var ar=[23,34,54,0,4,7];
+var result=ar.filter(function(x){
+    return (x>9 && x<99)
+})
+console.log(result) 
+
+*/
+
+/*13.Print only multiples of 5 from an array
+var ar=[22,40,54,87,90];
+var result=ar.filter(function(x){
+    return (x%5==0)
+})
+console.log(result)
+
+*/
+
+/* 14.Print only multiples of 2 AND 3 from an array
+var ar=[22,40,54,87,90];
+var result=ar.filter(function(x){
+    return (x%2==0 && x%3==0)
+})
+console.log(result)
+*/
+
+/*15.Print only multiples of 3 OR 5 from an array
+var ar=[22,40,54,87,90];
+var result=ar.filter(function(x){
+    return (x%3==0 || x%5==0)
+})
+console.log(result)
+
+*/
+
+
+// using reduce method
+/*var ar=[2,5,6,43,45,76];
+var result=ar.reduce(function(a,b){
+    if(a>b)
+    {
+        return a;
+    }
+   else{
+    return b;
+   }
+})
+console.log(result);
+*/
+</script>
+</body>
+</head>
+</html>

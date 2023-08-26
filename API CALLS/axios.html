@@ -1,0 +1,108 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<button onclick="submit()">submit</button>
+<button onclick="sortitle()">SortTitle</button><br><br>
+<body>
+<table border="2px">
+    <th>Title</th>
+    <th>Category</th>
+    <th>Price</th>
+    <th>Image</th>
+    <th>Description</th>
+
+    <tbody id="tb">
+
+    </tbody>
+</table>
+<script>
+var x=document.getElementById("tb")
+var ar=[]
+tb.innerHTML=""
+function submit(){
+axios.get("https://fakestoreapi.com/products").
+then(function(result)
+{
+ console.log(result)
+ 
+
+  ar=result.data;
+  genUI(ar);
+})
+
+}
+function genUI(ganesh)
+{
+    x.innerHTML=""
+ganesh.forEach(function(products){
+var tr1=document.createElement("tr")
+var td1=document.createElement("td")
+td1.innerHTML=products.title
+tr1.appendChild(td1)
+
+var td2=document.createElement("td")
+td2.innerHTML=products.category
+tr1.appendChild(td2)
+
+var td3=document.createElement("td")
+td3.innerHTML=products.price
+tr1.appendChild(td3)
+
+var td4=document.createElement("td")
+var im=document.createElement("img")
+im.src=products.image
+im.style.width="100px"
+im.style.height="100px"
+td4.appendChild(im)
+tr1.appendChild(td4)
+
+var td5=document.createElement("td")
+td5.innerHTML=products.description
+tr1.appendChild(td5)
+
+
+x.appendChild(tr1)
+
+})
+
+}
+
+
+function sortitle(){
+var y=ar.sort(function(a,b){
+    if(a.title<b.title)
+    {
+        return -1
+    }
+    if(a.title>b.title)
+    {
+        return 1
+    }
+    return 0
+})
+genUI(y)
+}
+
+
+// function (){
+// ar.sort(function(a,b){
+//     if(a.price<b.price)
+//     {
+//         return -1
+//     }
+//     if(a.price>b.price)
+//     {
+//         return 1
+//     }
+//     return 0
+// })
+// genUI()
+// }
+
+
+
+
+</script>    
+</body>
+</head>
+</html>

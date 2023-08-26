@@ -1,0 +1,105 @@
+<html>
+<head>
+        
+</head>
+<body>
+<table align="center">
+<form  onsubmit="event.preventDefault()">
+<tr>
+<td><h1>Add Contact Cards</h1></td></tr>
+<tr>  
+<td>Name:</td>    
+<td><input type="text"  id="nm"></td></tr><br><br>
+<tr>
+<td>Number:</td>
+<td><input type="text" id="nb"></td></tr><br><br>
+<tr>
+<td>Email:</td>
+<td><input type="text"  id="em"></td></tr><br><br>
+<tr>
+<td>Enter Image Url:</td>
+<td><input type="text" id="im"></td></tr><br><br> 
+<tr>
+<th colspan="5"><button onclick="add()">Add Student</button></th></tr>
+<td><div id="dd"></div></td>
+</form>
+</table>
+</body>
+<script>
+var ar=[]
+var nam=document.getElementById("nm")
+var numb=document.getElementById("nb")
+var ema=document.getElementById("em")
+var mg=document.getElementById("img")
+var div=document.getElementById("dd")
+
+function genCard(){
+    div.innerHTML="";
+    ar.forEach(function(a,i){
+     var d=document.createElement("div")
+     d.style.width="fit-content"
+     
+     d.style.backgroundColor="yellow"
+     d.style.border="2px solid"
+     d.style.textAlign="center"
+     d.style.marginBottom="5px"
+
+
+    var im=document.createElement("img")
+     im.src=a.im
+     im.style.width="20px"
+     im.style.height="30px"
+     im.style.borderRadius="50%"
+     d.appendChild(im);
+
+     var p1=document.createElement("p")
+     p1.innerHTML="name:"
+     var sp1=document.createElement("span")
+     sp1.innerHTML=a.name;
+     p1.appendChild(sp1)
+     d.appendChild(p1)
+
+
+     var p2=document.createElement("p")
+     p2.innerHTML="number:"
+     var sp2=document.createElement("span")
+     sp2.innerHTML=a.number
+     p2.appendChild(sp2)
+     d.appendChild(p2)
+
+
+     var p3=document.createElement("p")
+     p3.innerHTML="email:"
+     var sp3=document.createElement("span")
+     sp3.innerHTML=a.email
+     p3.appendChild(sp3)
+     d.appendChild(p3)
+
+
+     var btn=document.createElement("button")
+     btn.innerHTML="delete"
+     btn.onclick=function(){
+        deletefn(i)
+     }
+     d.appendChild(btn)
+     btn.style.backgroundColor="red"
+     div.appendChild(d)
+    })
+}
+
+function add(){
+var obj={
+    "name":nam.value,
+    "number":numb.value,
+    "email":ema.value,
+    "image":mg.value,
+}
+ar.push(obj)
+genCard();
+}
+
+function deletefn(i){
+    ar.splice(i,1)
+    genCard()
+}
+</script>   

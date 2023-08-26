@@ -1,0 +1,59 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+<div id="main">
+
+</div>
+<script>
+var meals=[]
+axios.get("https://www.themealdb.com/api/json/v1/1/random.php").then(function(response){
+    console.log(response.data)
+    meals=response.data.meals
+
+    meals.forEach(function(random){
+
+        var card=document.createElement("div")
+
+        var img1=document.createElement("img")
+        img1.src=random.strMealThumb
+       card.appendChild(img1)
+
+       var cardBody=document.createElement("div")
+       var h=document.createElement("h5")
+        h.innerHTML=random.strArea
+        cardBody.appendChild(h)
+
+
+        var div1=document.createElement("div")
+        div1.innerHTML=random.strCategory
+        cardBody.appendChild(div1)
+
+        var ol1=document.createElement("ol")
+        for(i=1;i<=20;i++){
+            var ingredients="strIngredient"+i
+            var measure="strMeasure"+i
+
+
+            if(random[ingredients])
+            {
+                var li1=document.createElement("li")
+                li1.innerHTML=random[ingredients]+":"+random[measure]
+                ol1.appendChild(li1)
+            }
+        }
+        cardBody.appendChild(ol1)
+
+        var p=document.createElement("p")
+        p.innerHTML=random.strInstructions
+        cardBody.appendChild(p)
+
+       document.getElementById("main").appendChild(card).appendChild(cardBody)
+    })
+})
+</script>        
+</body>
+</html>

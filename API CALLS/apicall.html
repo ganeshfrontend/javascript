@@ -1,0 +1,89 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<button onclick="getdata()">Show Data</button>
+Search:<input type="text" name="search" id="ip" onkeyup="search()"><br><br>
+<table border="2px">
+
+<th>country</th>
+<th>population</th>
+<th>flag</th>
+<th>borders</th>
+<th>region</th>
+
+<tbody id="tb">
+
+</tbody>
+</table>
+
+<script>
+  var ar=[]
+    var x=document.getElementById("tb")
+  
+    function genUI(countries){
+  x.innerHTML=""
+    
+
+  countries.forEach(function(country){
+ var tr1=document.createElement("tr")
+  var td1=document.createElement("td")
+  td1.innerHTML=country.name.common
+  tr1.appendChild(td1)
+
+var td2=document.createElement("td")
+td2.innerHTML=country.population
+tr1.appendChild(td2)
+
+
+var td3=document.createElement("td")
+var im=document.createElement("img")
+im.src=country.flags[0]
+im.style.width="100px"
+im.style.height="100px"
+td3.appendChild(im)
+tr1.appendChild(td3)
+
+
+var td4=document.createElement("td");
+td4.innerHTML=country.borders
+tr1.appendChild(td4)
+x.appendChild(tr1)
+
+var td5=document.createElement("td");
+td5.innerHTML=country.region
+tr1.appendChild(td5)
+x.appendChild(tr1)
+
+
+ }) 
+        console.log(countries)
+        
+}    
+
+  
+function getdata(){
+ $.get("https://restcountries.com/v3/all",function(countries,status)
+      {
+        
+        ar=countries
+       genUI(ar)
+
+      })
+}
+
+ function search(){
+      var inp=document.getElementById("ip")
+      var z=inp.value
+    var f=ar.filter(function(m,n){
+ return (m.name.common.startsWith(z))
+    
+      })
+      genUI(f)
+    }
+
+</script>
+</body>
+</html>

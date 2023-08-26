@@ -1,0 +1,39 @@
+<html>
+<head></head>
+<body>
+<script>
+    class Student{
+        firstname;
+        lastname;
+        gender;
+
+    constructor(fn,ln,gn){
+        this.firstname=fn;
+        this.lastname=ln;
+        this.gender=gn;
+    }
+getFullName(){
+    
+    setTimeout(function(){
+
+            if(this.gender==="female")
+        {
+         return "Mrs:"+this.firstname+this.lastname;
+        }
+        if(this.gender==="male")
+        {
+            return "Mr:"+this.firstname+this.lastname
+        }
+
+        },3000)
+    }
+
+ }
+
+var std1= new Student("Ganesh","gani","male")
+var std2= new Student("tarun","yadav","male")
+var std3= new Student("ajdf","yadav","female")
+std1.getFullName();
+</script>
+</body>
+</html>
